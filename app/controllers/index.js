@@ -1,3 +1,3 @@
 module.exports.home = (app, req, res) => {
-    res.render('index.ejs')
+    res.render('index.ejs', {validacao: {}})
 }
