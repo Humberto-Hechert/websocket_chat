@@ -11,5 +11,12 @@ module.exports.chatPage = (app, req, res) => {
         res.render("index", {validacao : erros})
         return
     }
+
+    app.get('io').emit(
+        'msgParaCliente',
+        {apelido: dadosForm.apelido,
+        mensagem: 'acabou de entrar no chat'}
+    )
+
     res.render('chat.ejs')
 }
